@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #cat {
+            width: 100px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<img src="cat.png" alt="Cat" id="cat">
+
+<script>
+    const cat = document.getElementById('cat');
+
+    cat.addEventListener('click', () => {
+        spinCat();
+    });
+
+    function spinCat() {
+        const spinValue = Math.floor(Math.random() * 360) - 180; // Random rotation between -180 and 180 degrees
+        cat.style.transform = `rotate(${spinValue}deg)`;
+    }
+</script>
+
+</body>
+</html>
