@@ -47,6 +47,67 @@
 <p>In this webpage I did the following: Changed the background, title font, added pictcures, youtube videos, hyperlink, background color was changed for text blocks, and I used an AI to generate the Wario with gatos.</p>
 
 <img src="wariocatpurp.jpg"> <img src="wariocatyel.jpg">
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA APOD on GitHub Pages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, p {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NASA Astronomy Picture of the Day</h1>
+        <div id="apodContainer">
+            <!-- Image and description will be inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // NASA APOD data
+        const apodData = {
+            "copyright": "Helge Buesing",
+            "date": "2024-02-23",
+            "explanation": "This supernova shock wave plows through interstellar space at over 500,000 kilometers per hour. Centered and moving upward in the sharply detailed color composite its thin, bright, braided filaments are actually long ripples in a cosmic sheet of glowing gas seen almost edge-on. Discovered in the 1840s by Sir John Herschel, the narrow-looking nebula is sometimes known as Herschel's Ray. Cataloged as NGC 2736, its pointed appearance suggests its modern popular name, the Pencil Nebula. The Pencil Nebula is about 800 light-years away. Nearly 5 light-years long it represents only a small part of the Vela supernova remnant though. The enormous Vela remnant itself is around 100 light-years in diameter, the expanding debris cloud of a star that was seen to explode about 11,000 years ago. Initially, the section of the shock wave seen as the Pencil nebula was moving at millions of kilometers per hour but has slowed considerably, sweeping up surrounding interstellar material.",
+            "hdurl": "https://apod.nasa.gov/apod/image/2402/NGC2736_Helge_Buesing2048.jpg",
+            "media_type": "image",
+            "service_version": "v1",
+            "title": "The Pencil Nebula Supernova Shock Wave",
+            "url": "https://apod.nasa.gov/apod/image/2402/NGC2736_Helge_Buesing1024.jpg"
+        };
+
+        // Display APOD information
+        const apodContainer = document.getElementById('apodContainer');
+        apodContainer.innerHTML = `
+            <h2>${apodData.title}</h2>
+            <img src="${apodData.url}" alt="${apodData.title}">
+            <p>${apodData.explanation}</p>
+        `;
+    </script>
+</
+
+
 </body>
 
 
