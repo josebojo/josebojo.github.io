@@ -49,6 +49,38 @@
 <img src="wariocatpurp.jpg"> <img src="wariocatyel.jpg">
 </body>
 
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA APOD API Example</title>
+</head>
+<body>
+    <h1>NASA Astronomy Picture of the Day</h1>
+    <div id="apodContainer">
+        <p>Loading...</p>
+    </div>
+
+    <script>
+        // Fetch data from NASA APOD API
+        fetch('https://api.nasa.gov/planetary/apod?api_key=YOUR_API_KEY_HERE')
+            .then(response => response.json())
+            .then(data => {
+                // Display APOD information
+                const apodContainer = document.getElementById('apodContainer');
+                apodContainer.innerHTML = `
+                    <h2>${data.title}</h2>
+                    <img src="${data.url}" alt="${data.title}" style="max-width: 100%;">
+                    <p>${data.explanation}</p>
+                `;
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                document.getElementById('apodContainer').innerHTML = '<p>Failed to fetch data. Please try again later.</p>';
+            });
+    </script>
+</body>
 
 </html>
 
